@@ -1,0 +1,14 @@
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\Practice2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\Practice2.AssemblyInfoInputs.cache
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\Practice2.AssemblyInfo.cs
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\Practice2.csproj.CoreCompileInputs.cache
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\bin\Debug\net8.0\Practice2.exe
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\bin\Debug\net8.0\Practice2.deps.json
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\bin\Debug\net8.0\Practice2.runtimeconfig.json
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\bin\Debug\net8.0\Practice2.dll
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\bin\Debug\net8.0\Practice2.pdb
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\Practice2.dll
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\refint\Practice2.dll
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\Practice2.pdb
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\Practice2.genruntimeconfig.cache
+C:\Users\orteg\OneDrive\Escritorio\Paradigmas\Practica2\Practica2\obj\Debug\net8.0\ref\Practice2.dll
