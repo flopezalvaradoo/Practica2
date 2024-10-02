@@ -24,7 +24,7 @@ namespace Practice2
         {
             PoliceCar police1 = new PoliceCar(plate);
             policeCarList.Add(police1);
-            Console.WriteLine(WriteMessage($"Police Car with plate: {plate} added"));
+            police1.SetPoliceStation(this);
         }
 
         public void ActivateAlarm(string plate)
@@ -51,9 +51,20 @@ namespace Practice2
             plateOffender = plate;
         }
 
-        public void ChaseCar()
+        public void AllChaseCar()
         {
-//hacer que los coches se pongan en modo persecucion
+            foreach (PoliceCar car in policeCarList)
+            {
+                car.StartChaseCar(plateOffender);
+            }
+        }
+
+        public void AllStopChaseCar()
+        {
+            foreach (PoliceCar car in policeCarList)
+            {
+                car.StopChaseCar();
+            }
         }
 
         public virtual string WriteMessage(string message)

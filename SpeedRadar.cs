@@ -22,16 +22,14 @@
             SpeedHistory.Add(speed);
         }
         
-        public string GetLastReading()
+        public float GetLastReading()
         {
-            if (speed > legalSpeed)
-            {
-                return WriteMessage("Catched above legal speed.");
-            }
-            else
-            {
-                return WriteMessage("Driving legally.");
-            }
+            return speed;
+        }
+
+        public float GetLegalSpeed()
+        {
+            return legalSpeed;
         }
 
         public virtual string WriteMessage(string radarReading)

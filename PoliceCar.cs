@@ -7,6 +7,7 @@
         private bool isPatrolling;
         private SpeedRadar speedRadar;
         private bool chassingCar;
+        private PoliceStation? policeStation;
 
         public PoliceCar(string plate) : base(typeOfVehicle, plate)
         {
@@ -15,10 +16,11 @@
             chassingCar = false;
         }
 
-        public void SetPoliceStation(PoliceStation policeStation)
+        public void SetPoliceStation(PoliceStation polStation)
         {
-            policeStation.policeCarList.Add(this);
+            polStation.policeCarList.Add(this);
             Console.WriteLine(WriteMessage("added to police station."));
+            policeStation = polStation;
         }
 
         public void UseRadar(Vehicle vehicle)
@@ -26,12 +28,60 @@
             if (isPatrolling)
             {
                 speedRadar.TriggerRadar(vehicle);
-                string meassurement = speedRadar.GetLastReading();
+                float speed_meassurement = speedRadar.GetLastReading();
+                string meassurement;
+
+                if (speed_meassurement > speedRadar.GetLegalSpeed())
+                {
+                    meassurement = "Catched above legal speed.";
+                    chassingCar = true;
+                    if (policeStation != null)
+                    {
+                        policeStation.ActivateAlarm(vehicle.GetPlate());
+                    }
+                }
+                else
+                {
+                    meassurement = "Driving legally.";
+                }
                 Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
             }
             else
             {
                 Console.WriteLine(WriteMessage($"has no active radar."));
+            }
+        }
+
+        public void StartChaseCar(string plate)
+        {
+            if (isPatrolling == true)
+            {
+                if (chassingCar == false)
+                {
+                    chassingCar = true;
+                    Console.WriteLine(WriteMessage($"starts chassing vehicle with plate {plate}."));
+                }
+                else
+                {
+                    Console.WriteLine(WriteMessage($"is already chassing vehicle with plate {plate}."));
+                }
+            }
+            else
+            {
+                Console.WriteLine(WriteMessage($"can't chase, it is not patrolling."));
+            }
+        }
+
+        public void StopChaseCar()
+        {
+            if (chassingCar == true)
+            {
+                chassingCar = false;
+                Console.WriteLine(WriteMessage("stops chassing."));
+            }
+            else
+            {
+                Console.WriteLine(WriteMessage($"is not chassing."));
             }
         }
 
