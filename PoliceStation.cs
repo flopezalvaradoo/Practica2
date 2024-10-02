@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Practice2
 {
-    class PoliceStation
+    class PoliceStation : IMessageWritter
     {
         private bool alarm;
         private string plateOffender;
@@ -19,17 +20,20 @@ namespace Practice2
             plateOffender = string.Empty;
         }
 
-        public void AddPoliceCarToStation(string plate)
+        public void AddNewPoliceCarToStation(string plate)
         {
             PoliceCar police1 = new PoliceCar(plate);
             policeCarList.Add(police1);
+            Console.WriteLine(WriteMessage($"Police Car with plate: {plate} added"));
         }
 
-        public void ActivateAlarm()
+        public void ActivateAlarm(string plate)
         {
             if (alarm == false)
             {
                 alarm = true;
+                SetPlateOffender(plate);
+                Console.WriteLine(WriteMessage($"The alarm has been activated, the license plate is: {plate}."));
             }
         }
         public void DeactivateAlarm()
@@ -37,6 +41,8 @@ namespace Practice2
             if (alarm == true)
             {
                 alarm = false;
+                SetPlateOffender(string.Empty);
+                Console.WriteLine(WriteMessage($"The alarm has been deactivated."));
             }
         }
 
@@ -48,6 +54,11 @@ namespace Practice2
         public void ChaseCar()
         {
 //hacer que los coches se pongan en modo persecucion
+        }
+
+        public virtual string WriteMessage(string message)
+        {
+            return $"Police Station notification: {message}";
         }
     }
 }
