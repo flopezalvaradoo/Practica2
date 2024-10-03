@@ -1,6 +1,6 @@
 ﻿namespace Practice2
 {
-    class Scooter : VehicleNoPlate
+    class Scooter : VehicleWithoutPlate
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances.
         private static string typeOfVehicle = "Scooter";
