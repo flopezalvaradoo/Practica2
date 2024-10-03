@@ -76,6 +76,9 @@
 
             city.RemoveTaxiLicenses(taxi4);
             policeStation.AllStopChaseCar();
+
+            //Scooter scooter1 = new Scooter();
+            //Console.WriteLine(scooter1.WriteMessage("Created"));
         }
     }
 }
