@@ -47,3 +47,15 @@
         }
     }
 }
+
+
+hacer puclic override
+
+hacer radar 
+
+hacer patinete (principios solid)
+
+hacer uml
+
+hacer preguntas de uml
+

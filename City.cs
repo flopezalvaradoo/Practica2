@@ -10,21 +10,34 @@ namespace Practice2
     class City : IMessageWritter
     {
         private string name;
-        public PoliceStation policeStation;
+        public PoliceStation? policeStation;
         public List<Taxi> taxiLicenseList { get; private set; }
 
         public City(string city_name)
         {
             name = city_name;
             taxiLicenseList = new List<Taxi>();
-            policeStation = new PoliceStation();
         }
 
+        public void SetPoliceStation(PoliceStation PoliceSta)
+        {
+            policeStation = PoliceSta;
+        }
+
+        public override string ToString()
+        {
+            return $"{GetName()} notification";
+        }
+
+        public string GetName()
+        {
+            return name;   
+        }
         public void GiveTaxiLicenses(string plate)
         {
             Taxi taxi1 = new Taxi(plate);
             taxiLicenseList.Add(taxi1);
-            Console.WriteLine(taxi1.WriteMessage("Created"));
+            Console.WriteLine(taxi1.WriteMessage("Created (from city)"));
         }
 
         public void RemoveTaxiLicenses(Taxi selectedTaxi)
@@ -35,7 +48,7 @@ namespace Practice2
 
         public virtual string WriteMessage(string message)
         {
-            return $"City notification: {message}";
+            return $"{this}: {message}";
         }
     }
 }

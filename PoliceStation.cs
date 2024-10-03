@@ -67,9 +67,14 @@ namespace Practice2
             }
         }
 
+        public override string ToString()
+        {
+            return $"Police Station notification";
+        }
+
         public virtual string WriteMessage(string message)
         {
-            return $"Police Station notification: {message}";
+            return $"{this}: {message}";
         }
     }
 }

@@ -36,6 +36,39 @@
             policeCar1.PrintRadarHistory();
             policeCar2.PrintRadarHistory();
 
+            City city = new City("Madrid");
+            Console.WriteLine(city.WriteMessage("Created"));
+
+            PoliceStation policeStation = new PoliceStation();
+            city.SetPoliceStation(policeStation);
+            Console.WriteLine(policeStation.WriteMessage("Created"));
+
+            city.GiveTaxiLicenses("0003 CCC");
+            city.GiveTaxiLicenses("0004 DDD");
+            city.GiveTaxiLicenses("0005 EEE");
+
+            policeStation.AddNewPoliceCarToStation("0003 CNP");
+            policeStation.AddNewPoliceCarToStation("0004 CNP");
+            policeStation.AddNewPoliceCarToStation("0005 CNP");
+
+
+            PoliceCar policeCar3 = policeStation.policeCarList[0];
+            PoliceCar policeCar4 = policeStation.policeCarList[1];
+            PoliceCar policeCar5 = policeStation.policeCarList[2];
+
+            policeCar3.StartPatrolling();
+            policeCar3.UseRadar(taxi1);
+
+            policeCar4.StartPatrolling();
+            policeCar5.StartPatrolling();
+
+            Taxi taxi4 = city.taxiLicenseList[1];
+            taxi4.StartRide();
+            policeCar5.UseRadar(taxi4);
+            policeStation.AllChaseCar();
+
+            city.RemoveTaxiLicenses(taxi4);
+            policeStation.AllStopChaseCar();
         }
     }
 }

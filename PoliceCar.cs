@@ -18,7 +18,6 @@
 
         public void SetPoliceStation(PoliceStation polStation)
         {
-            polStation.policeCarList.Add(this);
             Console.WriteLine(WriteMessage("added to police station."));
             policeStation = polStation;
         }
@@ -34,7 +33,9 @@
                 if (speed_meassurement > speedRadar.GetLegalSpeed())
                 {
                     meassurement = "Catched above legal speed.";
-                    chassingCar = true;
+                    Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
+                    
+                    StartChaseCar(vehicle.GetPlate());
                     if (policeStation != null)
                     {
                         policeStation.ActivateAlarm(vehicle.GetPlate());
@@ -43,8 +44,9 @@
                 else
                 {
                     meassurement = "Driving legally.";
+                    Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
                 }
-                Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
+                
             }
             else
             {
