@@ -7,14 +7,12 @@ namespace Practice2
         private string typeOfVehicle;
         private float speed;
 
-        // Constructor común para establecer el tipo de vehículo
         public Vehicle(string typeOfVehicle)
         {
             this.typeOfVehicle = typeOfVehicle;
             this.speed = 0f;
         }
 
-        // Método ToString para ser sobreescrito en subclases
         public abstract override string ToString();
 
         public string GetTypeOfVehicle()
@@ -32,7 +30,6 @@ namespace Practice2
             this.speed = speed;
         }
 
-        // Implementar la interfaz IMessageWritter con el formato de mensaje común
         public string WriteMessage(string message)
         {
             return $"{this}: {message}";

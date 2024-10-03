@@ -20,7 +20,6 @@ namespace Practice2
             return plate;
         }
 
-        // Override de ToString para incluir la matrícula
         public override string ToString()
         {
             return $"{GetTypeOfVehicle()} with plate {GetPlate()}";
