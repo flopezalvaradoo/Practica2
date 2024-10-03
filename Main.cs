@@ -15,6 +15,9 @@
             Console.WriteLine(policeCar1.WriteMessage("Created"));
             Console.WriteLine(policeCar2.WriteMessage("Created"));
 
+            policeCar1.GivePoliceARadar(); // Added new
+            policeCar2.GivePoliceARadar(); // Added new
+
             policeCar1.StartPatrolling();
             policeCar1.UseRadar(taxi1);
 
@@ -35,6 +38,8 @@
 
             policeCar1.PrintRadarHistory();
             policeCar2.PrintRadarHistory();
+
+            // New
 
             City city = new City("Madrid");
             Console.WriteLine(city.WriteMessage("Created"));
@@ -59,6 +64,8 @@
             policeCar3.StartPatrolling();
             policeCar3.UseRadar(taxi1);
 
+            policeCar4.GivePoliceARadar();
+            policeCar5.GivePoliceARadar();
             policeCar4.StartPatrolling();
             policeCar5.StartPatrolling();
 

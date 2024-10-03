@@ -49,13 +49,11 @@
 }
 
 
-hacer puclic override
+//hacer radar 
 
-hacer radar 
+//hacer patinete (principios solid)
 
-hacer patinete (principios solid)
+//hacer uml
 
-hacer uml
-
-hacer preguntas de uml
+//hacer preguntas de uml
 
