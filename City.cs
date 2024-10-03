@@ -19,9 +19,9 @@ namespace Practice2
             taxiLicenseList = new List<Taxi>();
         }
 
-        public void SetPoliceStation(PoliceStation PoliceSta)
+        public void SetPoliceStation(PoliceStation policeSta)
         {
-            policeStation = PoliceSta;
+            policeStation = policeSta;
         }
 
         public override string ToString()
